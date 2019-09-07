@@ -3,6 +3,13 @@ name = "graph-rs-types"
 version = "0.1.0"
 authors = ["sreeise"]
 edition = "2018"
+license-file = "LICENSE"
+repository = "https://github.com/sreeise/graph-rs-types"
+description = "Rust types generated from the Microsoft Graph metadata document"
+exclude = [
+    ".travis.yml",
+]
+keywords = ["graph", "API"]
 
 [dependencies]
 serde = "1.0.88"
