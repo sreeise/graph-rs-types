@@ -1,25 +1,25 @@
 use crate::complextypes::*;
 use crate::enumtypes::*;
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Entity {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DirectoryObject {
     #[serde(rename = "deletedDateTime")]
     pub deleted_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AdministrativeUnit {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Directory {
     #[serde(rename = "deletedItems")]
     pub deleted_items: Vec<DirectoryObject>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Device {
     #[serde(rename = "accountEnabled")]
     pub account_enabled: bool,
@@ -69,10 +69,10 @@ pub struct Device {
     pub extensions: Vec<Extension>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Extension {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DirectoryObjectPartnerReference {
     #[serde(rename = "description")]
     pub description: String,
@@ -84,7 +84,7 @@ pub struct DirectoryObjectPartnerReference {
     pub object_type: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DirectoryRole {
     #[serde(rename = "description")]
     pub description: String,
@@ -96,7 +96,7 @@ pub struct DirectoryRole {
     pub members: Vec<DirectoryObject>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DirectoryRoleTemplate {
     #[serde(rename = "description")]
     pub description: String,
@@ -104,7 +104,7 @@ pub struct DirectoryRoleTemplate {
     pub display_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Domain {
     #[serde(rename = "authenticationType")]
     pub authentication_type: String,
@@ -136,7 +136,7 @@ pub struct Domain {
     pub domain_name_references: Vec<DirectoryObject>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DomainDnsRecord {
     #[serde(rename = "isOptional")]
     pub is_optional: bool,
@@ -150,13 +150,13 @@ pub struct DomainDnsRecord {
     pub ttl: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DomainDnsCnameRecord {
     #[serde(rename = "canonicalName")]
     pub canonical_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DomainDnsMxRecord {
     #[serde(rename = "mailExchange")]
     pub mail_exchange: String,
@@ -164,7 +164,7 @@ pub struct DomainDnsMxRecord {
     pub preference: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DomainDnsSrvRecord {
     #[serde(rename = "nameTarget")]
     pub name_target: String,
@@ -180,19 +180,19 @@ pub struct DomainDnsSrvRecord {
     pub weight: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DomainDnsTxtRecord {
     #[serde(rename = "text")]
     pub text: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DomainDnsUnavailableRecord {
     #[serde(rename = "description")]
     pub description: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct LicenseDetails {
     #[serde(rename = "servicePlans")]
     pub service_plans: Vec<ServicePlanInfo>,
@@ -202,7 +202,7 @@ pub struct LicenseDetails {
     pub sku_part_number: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Group {
     #[serde(rename = "assignedLicenses")]
     pub assigned_licenses: Vec<AssignedLicense>,
@@ -306,7 +306,7 @@ pub struct Group {
     pub team: Team,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct GroupSetting {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -316,7 +316,7 @@ pub struct GroupSetting {
     pub values: Vec<SettingValue>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ConversationThread {
     #[serde(rename = "toRecipients")]
     pub to_recipients: Vec<Recipient>,
@@ -338,7 +338,7 @@ pub struct ConversationThread {
     pub posts: Vec<Post>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Calendar {
     #[serde(rename = "name")]
     pub name: String,
@@ -364,7 +364,7 @@ pub struct Calendar {
     pub multi_value_extended_properties: Vec<MultiValueLegacyExtendedProperty>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OutlookItem {
     #[serde(rename = "createdDateTime")]
     pub created_date_time: String,
@@ -376,7 +376,7 @@ pub struct OutlookItem {
     pub categories: Vec<String>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Event {
     #[serde(rename = "originalStartTimeZone")]
     pub original_start_time_zone: String,
@@ -450,7 +450,7 @@ pub struct Event {
     pub multi_value_extended_properties: Vec<MultiValueLegacyExtendedProperty>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Conversation {
     #[serde(rename = "topic")]
     pub topic: String,
@@ -466,7 +466,7 @@ pub struct Conversation {
     pub threads: Vec<ConversationThread>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ProfilePhoto {
     #[serde(rename = "height")]
     pub height: i32,
@@ -474,7 +474,7 @@ pub struct ProfilePhoto {
     pub width: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct BaseItem {
     #[serde(rename = "createdBy")]
     pub created_by: IdentitySet,
@@ -500,7 +500,7 @@ pub struct BaseItem {
     pub last_modified_by_user: User,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Drive {
     #[serde(rename = "driveType")]
     pub drive_type: String,
@@ -522,7 +522,7 @@ pub struct Drive {
     pub special: Vec<DriveItem>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Site {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -552,13 +552,13 @@ pub struct Site {
     pub onenote: Onenote,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerGroup {
     #[serde(rename = "plans")]
     pub plans: Vec<PlannerPlan>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Onenote {
     #[serde(rename = "notebooks")]
     pub notebooks: Vec<Notebook>,
@@ -574,7 +574,7 @@ pub struct Onenote {
     pub operations: Vec<OnenoteOperation>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct GroupLifecyclePolicy {
     #[serde(rename = "groupLifetimeInDays")]
     pub group_lifetime_in_days: i32,
@@ -584,7 +584,7 @@ pub struct GroupLifecyclePolicy {
     pub alternate_notification_emails: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Team {
     #[serde(rename = "webUrl")]
     pub web_url: String,
@@ -606,7 +606,7 @@ pub struct Team {
     pub operations: Vec<TeamsAsyncOperation>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Contract {
     #[serde(rename = "contractType")]
     pub contract_type: String,
@@ -618,7 +618,7 @@ pub struct Contract {
     pub display_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SubscribedSku {
     #[serde(rename = "capabilityStatus")]
     pub capability_status: String,
@@ -636,7 +636,7 @@ pub struct SubscribedSku {
     pub applies_to: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Organization {
     #[serde(rename = "assignedPlans")]
     pub assigned_plans: Vec<AssignedPlan>,
@@ -684,7 +684,7 @@ pub struct Organization {
     pub extensions: Vec<Extension>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct User {
     #[serde(rename = "accountEnabled")]
     pub account_enabled: bool,
@@ -878,13 +878,13 @@ pub struct User {
     pub joined_teams: Vec<Group>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OutlookUser {
     #[serde(rename = "masterCategories")]
     pub master_categories: Vec<OutlookCategory>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Message {
     #[serde(rename = "receivedDateTime")]
     pub received_date_time: String,
@@ -946,7 +946,7 @@ pub struct Message {
     pub multi_value_extended_properties: Vec<MultiValueLegacyExtendedProperty>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MailFolder {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -970,7 +970,7 @@ pub struct MailFolder {
     pub multi_value_extended_properties: Vec<MultiValueLegacyExtendedProperty>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct CalendarGroup {
     #[serde(rename = "name")]
     pub name: String,
@@ -982,7 +982,7 @@ pub struct CalendarGroup {
     pub calendars: Vec<Calendar>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Person {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -1024,7 +1024,7 @@ pub struct Person {
     pub im_address: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Contact {
     #[serde(rename = "parentFolderId")]
     pub parent_folder_id: String,
@@ -1102,7 +1102,7 @@ pub struct Contact {
     pub photo: ProfilePhoto,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ContactFolder {
     #[serde(rename = "parentFolderId")]
     pub parent_folder_id: String,
@@ -1118,13 +1118,13 @@ pub struct ContactFolder {
     pub multi_value_extended_properties: Vec<MultiValueLegacyExtendedProperty>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct InferenceClassification {
     #[serde(rename = "overrides")]
     pub overrides: Vec<InferenceClassificationOverride>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerUser {
     #[serde(rename = "tasks")]
     pub tasks: Vec<PlannerTask>,
@@ -1132,7 +1132,7 @@ pub struct PlannerUser {
     pub plans: Vec<PlannerPlan>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDevice {
     #[serde(rename = "userId")]
     pub user_id: String,
@@ -1234,7 +1234,7 @@ pub struct ManagedDevice {
     pub device_compliance_policy_states: Vec<DeviceCompliancePolicyState>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppRegistration {
     #[serde(rename = "createdDateTime")]
     pub created_date_time: String,
@@ -1268,7 +1268,7 @@ pub struct ManagedAppRegistration {
     pub operations: Vec<ManagedAppOperation>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceManagementTroubleshootingEvent {
     #[serde(rename = "eventDateTime")]
     pub event_date_time: String,
@@ -1276,7 +1276,7 @@ pub struct DeviceManagementTroubleshootingEvent {
     pub correlation_id: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct UserActivity {
     #[serde(rename = "visualElements")]
     pub visual_elements: VisualInfo,
@@ -1308,7 +1308,7 @@ pub struct UserActivity {
     pub history_items: Vec<ActivityHistoryItem>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OfficeGraphInsights {
     #[serde(rename = "trending")]
     pub trending: Vec<Trending>,
@@ -1318,7 +1318,7 @@ pub struct OfficeGraphInsights {
     pub used: Vec<UsedInsight>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct UserSettings {
     #[serde(rename = "contributionToContentDiscoveryDisabled")]
     pub contribution_to_content_discovery_disabled: bool,
@@ -1326,7 +1326,7 @@ pub struct UserSettings {
     pub contribution_to_content_discovery_as_organization_disabled: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct GroupSettingTemplate {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -1336,7 +1336,7 @@ pub struct GroupSettingTemplate {
     pub values: Vec<SettingTemplateValue>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SchemaExtension {
     #[serde(rename = "description")]
     pub description: String,
@@ -1350,7 +1350,7 @@ pub struct SchemaExtension {
     pub owner: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Attachment {
     #[serde(rename = "lastModifiedDateTime")]
     pub last_modified_date_time: String,
@@ -1364,7 +1364,7 @@ pub struct Attachment {
     pub is_inline: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OutlookCategory {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -1372,7 +1372,7 @@ pub struct OutlookCategory {
     pub color: CategoryColor,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MessageRule {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -1392,19 +1392,19 @@ pub struct MessageRule {
     pub is_read_only: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SingleValueLegacyExtendedProperty {
     #[serde(rename = "value")]
     pub value: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MultiValueLegacyExtendedProperty {
     #[serde(rename = "value")]
     pub value: Vec<String>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MailSearchFolder {
     #[serde(rename = "isSupported")]
     pub is_supported: bool,
@@ -1416,7 +1416,7 @@ pub struct MailSearchFolder {
     pub filter_query: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct FileAttachment {
     #[serde(rename = "contentId")]
     pub content_id: String,
@@ -1426,13 +1426,13 @@ pub struct FileAttachment {
     pub content_bytes: Vec<u8>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ItemAttachment {
     #[serde(rename = "item")]
     pub item: OutlookItem,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EventMessage {
     #[serde(rename = "meetingMessageType")]
     pub meeting_message_type: MeetingMessageType,
@@ -1440,16 +1440,16 @@ pub struct EventMessage {
     pub event: Event,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ReferenceAttachment {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OpenTypeExtension {
     #[serde(rename = "extensionName")]
     pub extension_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Post {
     #[serde(rename = "body")]
     pub body: ItemBody,
@@ -1479,7 +1479,7 @@ pub struct Post {
     pub multi_value_extended_properties: Vec<MultiValueLegacyExtendedProperty>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct InferenceClassificationOverride {
     #[serde(rename = "classifyAs")]
     pub classify_as: InferenceClassificationType,
@@ -1487,7 +1487,7 @@ pub struct InferenceClassificationOverride {
     pub sender_email_address: EmailAddress,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct BaseItemVersion {
     #[serde(rename = "lastModifiedBy")]
     pub last_modified_by: IdentitySet,
@@ -1497,7 +1497,7 @@ pub struct BaseItemVersion {
     pub publication: PublicationFacet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ColumnDefinition {
     #[serde(rename = "boolean")]
     pub boolean: BooleanColumn,
@@ -1539,13 +1539,13 @@ pub struct ColumnDefinition {
     pub text: TextColumn,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ColumnLink {
     #[serde(rename = "name")]
     pub name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ContentType {
     #[serde(rename = "description")]
     pub description: String,
@@ -1569,12 +1569,12 @@ pub struct ContentType {
     pub column_links: Vec<ColumnLink>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DriveItem {
     #[serde(rename = "audio")]
     pub audio: Audio,
     #[serde(rename = "content")]
-    pub content: String,
+    pub content: Vec<u8>,
     #[serde(rename = "cTag")]
     pub c_tag: String,
     #[serde(rename = "deleted")]
@@ -1629,9 +1629,19 @@ pub struct DriveItem {
     pub versions: Vec<DriveItemVersion>,
     #[serde(rename = "workbook")]
     pub workbook: Workbook,
+    #[serde(rename = "microsoft.graph.driveItem")]
+    pub changed: bool,
+    #[serde(rename = "microsoft.graph.driveItem")]
+    pub conflict_behavior: String,
+    #[serde(rename = "microsoft.graph.driveItem")]
+    pub download_url: String,
+    #[serde(rename = "microsoft.graph.driveItem")]
+    pub shared_changed: bool,
+    #[serde(rename = "microsoft.graph.driveItem")]
+    pub source_url: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct List {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -1651,7 +1661,7 @@ pub struct List {
     pub items: Vec<ListItem>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ItemAnalytics {
     #[serde(rename = "itemActivityStats")]
     pub item_activity_stats: Vec<ItemActivityStat>,
@@ -1661,7 +1671,7 @@ pub struct ItemAnalytics {
     pub last_seven_days: ItemActivityStat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ListItem {
     #[serde(rename = "contentType")]
     pub content_type: ContentTypeInfo,
@@ -1677,7 +1687,7 @@ pub struct ListItem {
     pub versions: Vec<ListItemVersion>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Permission {
     #[serde(rename = "grantedTo")]
     pub granted_to: IdentitySet,
@@ -1693,7 +1703,7 @@ pub struct Permission {
     pub share_id: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Subscription {
     #[serde(rename = "resource")]
     pub resource: String,
@@ -1711,7 +1721,7 @@ pub struct Subscription {
     pub creator_id: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ThumbnailSet {
     #[serde(rename = "large")]
     pub large: Thumbnail,
@@ -1723,15 +1733,15 @@ pub struct ThumbnailSet {
     pub source: Thumbnail,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DriveItemVersion {
     #[serde(rename = "content")]
-    pub content: String,
+    pub content: Vec<u8>,
     #[serde(rename = "size")]
     pub size: i64,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Workbook {
     #[serde(rename = "application")]
     pub application: WorkbookApplication,
@@ -1747,10 +1757,10 @@ pub struct Workbook {
     pub functions: WorkbookFunctions,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct FieldValueSet {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ItemActivity {
     #[serde(rename = "access")]
     pub access: AccessAction,
@@ -1762,7 +1772,7 @@ pub struct ItemActivity {
     pub drive_item: DriveItem,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ItemActivityStat {
     #[serde(rename = "startDateTime")]
     pub start_date_time: String,
@@ -1786,13 +1796,13 @@ pub struct ItemActivityStat {
     pub activities: Vec<ItemActivity>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ListItemVersion {
     #[serde(rename = "fields")]
     pub fields: FieldValueSet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SharedDriveItem {
     #[serde(rename = "owner")]
     pub owner: IdentitySet,
@@ -1810,13 +1820,13 @@ pub struct SharedDriveItem {
     pub site: Site,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookApplication {
     #[serde(rename = "calculationMode")]
     pub calculation_mode: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookNamedItem {
     #[serde(rename = "comment")]
     pub comment: String,
@@ -1834,7 +1844,7 @@ pub struct WorkbookNamedItem {
     pub worksheet: WorkbookWorksheet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookTable {
     #[serde(rename = "highlightFirstColumn")]
     pub highlight_first_column: bool,
@@ -1866,7 +1876,7 @@ pub struct WorkbookTable {
     pub worksheet: WorkbookWorksheet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookWorksheet {
     #[serde(rename = "name")]
     pub name: String,
@@ -1886,7 +1896,7 @@ pub struct WorkbookWorksheet {
     pub tables: Vec<WorkbookTable>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookComment {
     #[serde(rename = "content")]
     pub content: String,
@@ -1896,10 +1906,10 @@ pub struct WorkbookComment {
     pub replies: Vec<WorkbookCommentReply>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookFunctions {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChart {
     #[serde(rename = "height")]
     pub height: i64,
@@ -1927,7 +1937,7 @@ pub struct WorkbookChart {
     pub worksheet: WorkbookWorksheet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartAxes {
     #[serde(rename = "categoryAxis")]
     pub category_axis: WorkbookChartAxis,
@@ -1937,7 +1947,7 @@ pub struct WorkbookChartAxes {
     pub value_axis: WorkbookChartAxis,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartDataLabels {
     #[serde(rename = "position")]
     pub position: String,
@@ -1959,7 +1969,7 @@ pub struct WorkbookChartDataLabels {
     pub format: WorkbookChartDataLabelFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartAreaFormat {
     #[serde(rename = "fill")]
     pub fill: WorkbookChartFill,
@@ -1967,7 +1977,7 @@ pub struct WorkbookChartAreaFormat {
     pub font: WorkbookChartFont,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartLegend {
     #[serde(rename = "overlay")]
     pub overlay: bool,
@@ -1979,7 +1989,7 @@ pub struct WorkbookChartLegend {
     pub format: WorkbookChartLegendFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartSeries {
     #[serde(rename = "name")]
     pub name: String,
@@ -1989,7 +1999,7 @@ pub struct WorkbookChartSeries {
     pub points: Vec<WorkbookChartPoint>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartTitle {
     #[serde(rename = "overlay")]
     pub overlay: bool,
@@ -2001,10 +2011,10 @@ pub struct WorkbookChartTitle {
     pub format: WorkbookChartTitleFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartFill {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartFont {
     #[serde(rename = "bold")]
     pub bold: bool,
@@ -2020,7 +2030,7 @@ pub struct WorkbookChartFont {
     pub underline: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartAxis {
     #[serde(rename = "majorUnit")]
     pub major_unit: Json,
@@ -2040,7 +2050,7 @@ pub struct WorkbookChartAxis {
     pub title: WorkbookChartAxisTitle,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartAxisFormat {
     #[serde(rename = "font")]
     pub font: WorkbookChartFont,
@@ -2048,7 +2058,7 @@ pub struct WorkbookChartAxisFormat {
     pub line: WorkbookChartLineFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartGridlines {
     #[serde(rename = "visible")]
     pub visible: bool,
@@ -2056,7 +2066,7 @@ pub struct WorkbookChartGridlines {
     pub format: WorkbookChartGridlinesFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartAxisTitle {
     #[serde(rename = "text")]
     pub text: String,
@@ -2066,19 +2076,19 @@ pub struct WorkbookChartAxisTitle {
     pub format: WorkbookChartAxisTitleFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartLineFormat {
     #[serde(rename = "color")]
     pub color: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartAxisTitleFormat {
     #[serde(rename = "font")]
     pub font: WorkbookChartFont,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartDataLabelFormat {
     #[serde(rename = "fill")]
     pub fill: WorkbookChartFill,
@@ -2086,13 +2096,13 @@ pub struct WorkbookChartDataLabelFormat {
     pub font: WorkbookChartFont,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartGridlinesFormat {
     #[serde(rename = "line")]
     pub line: WorkbookChartLineFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartLegendFormat {
     #[serde(rename = "fill")]
     pub fill: WorkbookChartFill,
@@ -2100,7 +2110,7 @@ pub struct WorkbookChartLegendFormat {
     pub font: WorkbookChartFont,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartPoint {
     #[serde(rename = "value")]
     pub value: Json,
@@ -2108,13 +2118,13 @@ pub struct WorkbookChartPoint {
     pub format: WorkbookChartPointFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartPointFormat {
     #[serde(rename = "fill")]
     pub fill: WorkbookChartFill,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartSeriesFormat {
     #[serde(rename = "fill")]
     pub fill: WorkbookChartFill,
@@ -2122,7 +2132,7 @@ pub struct WorkbookChartSeriesFormat {
     pub line: WorkbookChartLineFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookChartTitleFormat {
     #[serde(rename = "fill")]
     pub fill: WorkbookChartFill,
@@ -2130,7 +2140,7 @@ pub struct WorkbookChartTitleFormat {
     pub font: WorkbookChartFont,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookCommentReply {
     #[serde(rename = "content")]
     pub content: String,
@@ -2138,13 +2148,13 @@ pub struct WorkbookCommentReply {
     pub content_type: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookFilter {
     #[serde(rename = "criteria")]
     pub criteria: WorkbookFilterCriteria,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookFormatProtection {
     #[serde(rename = "formulaHidden")]
     pub formula_hidden: bool,
@@ -2152,7 +2162,7 @@ pub struct WorkbookFormatProtection {
     pub locked: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookFunctionResult {
     #[serde(rename = "error")]
     pub error: String,
@@ -2160,7 +2170,7 @@ pub struct WorkbookFunctionResult {
     pub value: Json,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookPivotTable {
     #[serde(rename = "name")]
     pub name: String,
@@ -2168,7 +2178,7 @@ pub struct WorkbookPivotTable {
     pub worksheet: WorkbookWorksheet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRange {
     #[serde(rename = "address")]
     pub address: String,
@@ -2212,7 +2222,7 @@ pub struct WorkbookRange {
     pub worksheet: WorkbookWorksheet,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRangeFormat {
     #[serde(rename = "columnWidth")]
     pub column_width: i64,
@@ -2234,10 +2244,10 @@ pub struct WorkbookRangeFormat {
     pub protection: WorkbookFormatProtection,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRangeSort {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRangeBorder {
     #[serde(rename = "color")]
     pub color: String,
@@ -2249,13 +2259,13 @@ pub struct WorkbookRangeBorder {
     pub weight: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRangeFill {
     #[serde(rename = "color")]
     pub color: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRangeFont {
     #[serde(rename = "bold")]
     pub bold: bool,
@@ -2271,7 +2281,7 @@ pub struct WorkbookRangeFont {
     pub underline: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookRangeView {
     #[serde(rename = "cellAddresses")]
     pub cell_addresses: Json,
@@ -2299,7 +2309,7 @@ pub struct WorkbookRangeView {
     pub rows: Vec<WorkbookRangeView>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookTableColumn {
     #[serde(rename = "index")]
     pub index: i32,
@@ -2311,7 +2321,7 @@ pub struct WorkbookTableColumn {
     pub filter: WorkbookFilter,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookTableRow {
     #[serde(rename = "index")]
     pub index: i32,
@@ -2319,7 +2329,7 @@ pub struct WorkbookTableRow {
     pub values: Json,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookTableSort {
     #[serde(rename = "fields")]
     pub fields: Vec<WorkbookSortField>,
@@ -2329,7 +2339,7 @@ pub struct WorkbookTableSort {
     pub method: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WorkbookWorksheetProtection {
     #[serde(rename = "options")]
     pub options: WorkbookWorksheetProtectionOptions,
@@ -2337,7 +2347,7 @@ pub struct WorkbookWorksheetProtection {
     pub protected: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Invitation {
     #[serde(rename = "invitedUserDisplayName")]
     pub invited_user_display_name: String,
@@ -2359,7 +2369,7 @@ pub struct Invitation {
     pub invited_user: User,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerTask {
     #[serde(rename = "createdBy")]
     pub created_by: IdentitySet,
@@ -2411,7 +2421,7 @@ pub struct PlannerTask {
     pub bucket_task_board_format: PlannerBucketTaskBoardTaskFormat,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerPlan {
     #[serde(rename = "createdBy")]
     pub created_by: IdentitySet,
@@ -2429,7 +2439,7 @@ pub struct PlannerPlan {
     pub details: PlannerPlanDetails,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Planner {
     #[serde(rename = "tasks")]
     pub tasks: Vec<PlannerTask>,
@@ -2439,7 +2449,7 @@ pub struct Planner {
     pub buckets: Vec<PlannerBucket>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerBucket {
     #[serde(rename = "name")]
     pub name: String,
@@ -2451,7 +2461,7 @@ pub struct PlannerBucket {
     pub tasks: Vec<PlannerTask>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerTaskDetails {
     #[serde(rename = "description")]
     pub description: String,
@@ -2463,7 +2473,7 @@ pub struct PlannerTaskDetails {
     pub checklist: PlannerChecklistItems,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerAssignedToTaskBoardTaskFormat {
     #[serde(rename = "unassignedOrderHint")]
     pub unassigned_order_hint: String,
@@ -2471,19 +2481,19 @@ pub struct PlannerAssignedToTaskBoardTaskFormat {
     pub order_hints_by_assignee: PlannerOrderHintsByAssignee,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerProgressTaskBoardTaskFormat {
     #[serde(rename = "orderHint")]
     pub order_hint: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerBucketTaskBoardTaskFormat {
     #[serde(rename = "orderHint")]
     pub order_hint: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct PlannerPlanDetails {
     #[serde(rename = "sharedWith")]
     pub shared_with: PlannerUserIds,
@@ -2491,19 +2501,19 @@ pub struct PlannerPlanDetails {
     pub category_descriptions: PlannerCategoryDescriptions,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteEntityBaseModel {
     #[serde(rename = "self")]
     pub _self: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteEntitySchemaObjectModel {
     #[serde(rename = "createdDateTime")]
     pub created_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteEntityHierarchyModel {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -2515,7 +2525,7 @@ pub struct OnenoteEntityHierarchyModel {
     pub last_modified_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Notebook {
     #[serde(rename = "isDefault")]
     pub is_default: bool,
@@ -2535,7 +2545,7 @@ pub struct Notebook {
     pub section_groups: Vec<SectionGroup>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteSection {
     #[serde(rename = "isDefault")]
     pub is_default: bool,
@@ -2546,12 +2556,12 @@ pub struct OnenoteSection {
     #[serde(rename = "parentNotebook")]
     pub parent_notebook: Notebook,
     #[serde(rename = "parentSectionGroup")]
-    pub parent_section_group: Box<SectionGroup>,
+    pub parent_section_group: SectionGroup,
     #[serde(rename = "pages")]
     pub pages: Vec<OnenotePage>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SectionGroup {
     #[serde(rename = "sectionsUrl")]
     pub sections_url: String,
@@ -2567,7 +2577,7 @@ pub struct SectionGroup {
     pub section_groups: Vec<SectionGroup>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenotePage {
     #[serde(rename = "title")]
     pub title: String,
@@ -2578,7 +2588,7 @@ pub struct OnenotePage {
     #[serde(rename = "contentUrl")]
     pub content_url: String,
     #[serde(rename = "content")]
-    pub content: String,
+    pub content: Vec<u8>,
     #[serde(rename = "lastModifiedDateTime")]
     pub last_modified_date_time: String,
     #[serde(rename = "level")]
@@ -2593,15 +2603,15 @@ pub struct OnenotePage {
     pub parent_notebook: Notebook,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteResource {
     #[serde(rename = "content")]
-    pub content: String,
+    pub content: Vec<u8>,
     #[serde(rename = "contentUrl")]
     pub content_url: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Operation {
     #[serde(rename = "status")]
     pub status: OperationStatus,
@@ -2611,7 +2621,7 @@ pub struct Operation {
     pub last_action_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteOperation {
     #[serde(rename = "resourceLocation")]
     pub resource_location: String,
@@ -2623,10 +2633,10 @@ pub struct OnenoteOperation {
     pub percent_complete: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ReportRoot {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EducationRoot {
     #[serde(rename = "classes")]
     pub classes: Vec<EducationClass>,
@@ -2638,7 +2648,7 @@ pub struct EducationRoot {
     pub me: EducationUser,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EducationClass {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -2668,7 +2678,7 @@ pub struct EducationClass {
     pub group: Group,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EducationOrganization {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -2678,7 +2688,7 @@ pub struct EducationOrganization {
     pub external_source: EducationExternalSource,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EducationSchool {
     #[serde(rename = "principalEmail")]
     pub principal_email: String,
@@ -2708,7 +2718,7 @@ pub struct EducationSchool {
     pub users: Vec<EducationUser>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EducationUser {
     #[serde(rename = "primaryRole")]
     pub primary_role: EducationUserRole,
@@ -2776,7 +2786,7 @@ pub struct EducationUser {
     pub user: User,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceAppManagement {
     #[serde(rename = "microsoftStoreForBusinessLastSuccessfulSyncDateTime")]
     pub microsoft_store_for_business_last_successful_sync_date_time: String,
@@ -2816,7 +2826,7 @@ pub struct DeviceAppManagement {
     pub managed_e_books: Vec<ManagedEBook>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileApp {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -2850,7 +2860,7 @@ pub struct MobileApp {
     pub assignments: Vec<MobileAppAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileAppCategory {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -2858,7 +2868,7 @@ pub struct MobileAppCategory {
     pub last_modified_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceMobileAppConfiguration {
     #[serde(rename = "targetedMobileApps")]
     pub targeted_mobile_apps: Vec<String>,
@@ -2884,7 +2894,7 @@ pub struct ManagedDeviceMobileAppConfiguration {
     pub user_status_summary: ManagedDeviceMobileAppConfigurationUserSummary,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct VppToken {
     #[serde(rename = "organizationName")]
     pub organization_name: String,
@@ -2910,7 +2920,7 @@ pub struct VppToken {
     pub country_or_region: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppPolicy {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -2924,7 +2934,7 @@ pub struct ManagedAppPolicy {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppProtection {
     #[serde(rename = "periodOfflineBeforeAccessCheck")]
     pub period_offline_before_access_check: String,
@@ -2980,7 +2990,7 @@ pub struct ManagedAppProtection {
     pub minimum_warning_app_version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TargetedManagedAppProtection {
     #[serde(rename = "isAssigned")]
     pub is_assigned: bool,
@@ -2988,7 +2998,7 @@ pub struct TargetedManagedAppProtection {
     pub assignments: Vec<TargetedManagedAppPolicyAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosManagedAppProtection {
     #[serde(rename = "appDataEncryptionType")]
     pub app_data_encryption_type: ManagedAppDataEncryptionType,
@@ -3004,7 +3014,7 @@ pub struct IosManagedAppProtection {
     pub deployment_summary: ManagedAppPolicyDeploymentSummary,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidManagedAppProtection {
     #[serde(rename = "screenCaptureBlocked")]
     pub screen_capture_blocked: bool,
@@ -3024,7 +3034,7 @@ pub struct AndroidManagedAppProtection {
     pub deployment_summary: ManagedAppPolicyDeploymentSummary,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DefaultManagedAppProtection {
     #[serde(rename = "appDataEncryptionType")]
     pub app_data_encryption_type: ManagedAppDataEncryptionType,
@@ -3052,13 +3062,13 @@ pub struct DefaultManagedAppProtection {
     pub deployment_summary: ManagedAppPolicyDeploymentSummary,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppConfiguration {
     #[serde(rename = "customSettings")]
     pub custom_settings: Vec<KeyValuePair>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TargetedManagedAppConfiguration {
     #[serde(rename = "deployedAppCount")]
     pub deployed_app_count: i32,
@@ -3072,7 +3082,7 @@ pub struct TargetedManagedAppConfiguration {
     pub assignments: Vec<TargetedManagedAppPolicyAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsInformationProtection {
     #[serde(rename = "enforcementLevel")]
     pub enforcement_level: WindowsInformationProtectionEnforcementLevel,
@@ -3126,10 +3136,10 @@ pub struct WindowsInformationProtection {
     pub assignments: Vec<TargetedManagedAppPolicyAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MdmWindowsInformationProtectionPolicy {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsInformationProtectionPolicy {
     #[serde(rename = "revokeOnMdmHandoffDisabled")]
     pub revoke_on_mdm_handoff_disabled: bool,
@@ -3157,7 +3167,7 @@ pub struct WindowsInformationProtectionPolicy {
     pub days_without_contact_before_unenroll: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppStatus {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3165,7 +3175,7 @@ pub struct ManagedAppStatus {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedEBook {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3195,7 +3205,7 @@ pub struct ManagedEBook {
     pub user_state_summary: Vec<UserInstallStateSummary>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileAppAssignment {
     #[serde(rename = "intent")]
     pub intent: InstallIntent,
@@ -3205,7 +3215,7 @@ pub struct MobileAppAssignment {
     pub settings: MobileAppAssignmentSettings,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileAppContentFile {
     #[serde(rename = "azureStorageUri")]
     pub azure_storage_uri: String,
@@ -3227,13 +3237,13 @@ pub struct MobileAppContentFile {
     pub upload_state: MobileAppContentFileUploadState,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceMobileAppConfigurationAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceMobileAppConfigurationDeviceStatus {
     #[serde(rename = "deviceDisplayName")]
     pub device_display_name: String,
@@ -3251,7 +3261,7 @@ pub struct ManagedDeviceMobileAppConfigurationDeviceStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceMobileAppConfigurationUserStatus {
     #[serde(rename = "userDisplayName")]
     pub user_display_name: String,
@@ -3265,7 +3275,7 @@ pub struct ManagedDeviceMobileAppConfigurationUserStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceMobileAppConfigurationDeviceSummary {
     #[serde(rename = "pendingCount")]
     pub pending_count: i32,
@@ -3283,7 +3293,7 @@ pub struct ManagedDeviceMobileAppConfigurationDeviceSummary {
     pub configuration_version: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceMobileAppConfigurationUserSummary {
     #[serde(rename = "pendingCount")]
     pub pending_count: i32,
@@ -3301,10 +3311,10 @@ pub struct ManagedDeviceMobileAppConfigurationUserSummary {
     pub configuration_version: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MacOSOfficeSuiteApp {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedApp {
     #[serde(rename = "appAvailability")]
     pub app_availability: ManagedAppAvailability,
@@ -3312,7 +3322,7 @@ pub struct ManagedApp {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAndroidStoreApp {
     #[serde(rename = "packageId")]
     pub package_id: String,
@@ -3322,7 +3332,7 @@ pub struct ManagedAndroidStoreApp {
     pub minimum_supported_operating_system: AndroidMinimumOperatingSystem,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedIOSStoreApp {
     #[serde(rename = "bundleId")]
     pub bundle_id: String,
@@ -3334,7 +3344,7 @@ pub struct ManagedIOSStoreApp {
     pub minimum_supported_operating_system: IosMinimumOperatingSystem,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedMobileLobApp {
     #[serde(rename = "committedContentVersion")]
     pub committed_content_version: String,
@@ -3346,13 +3356,13 @@ pub struct ManagedMobileLobApp {
     pub content_versions: Vec<MobileAppContent>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileAppContent {
     #[serde(rename = "files")]
     pub files: Vec<MobileAppContentFile>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAndroidLobApp {
     #[serde(rename = "packageId")]
     pub package_id: String,
@@ -3364,7 +3374,7 @@ pub struct ManagedAndroidLobApp {
     pub version_code: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedIOSLobApp {
     #[serde(rename = "bundleId")]
     pub bundle_id: String,
@@ -3380,7 +3390,7 @@ pub struct ManagedIOSLobApp {
     pub build_number: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileLobApp {
     #[serde(rename = "committedContentVersion")]
     pub committed_content_version: String,
@@ -3392,7 +3402,7 @@ pub struct MobileLobApp {
     pub content_versions: Vec<MobileAppContent>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsMobileMSI {
     #[serde(rename = "commandLine")]
     pub command_line: String,
@@ -3404,7 +3414,7 @@ pub struct WindowsMobileMSI {
     pub ignore_version_detection: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsUniversalAppX {
     #[serde(rename = "applicableArchitectures")]
     pub applicable_architectures: WindowsArchitecture,
@@ -3424,7 +3434,7 @@ pub struct WindowsUniversalAppX {
     pub identity_version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidLobApp {
     #[serde(rename = "packageId")]
     pub package_id: String,
@@ -3436,7 +3446,7 @@ pub struct AndroidLobApp {
     pub version_code: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosLobApp {
     #[serde(rename = "bundleId")]
     pub bundle_id: String,
@@ -3452,7 +3462,7 @@ pub struct IosLobApp {
     pub build_number: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MicrosoftStoreForBusinessApp {
     #[serde(rename = "usedLicenseCount")]
     pub used_license_count: i32,
@@ -3466,7 +3476,7 @@ pub struct MicrosoftStoreForBusinessApp {
     pub package_identity_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WebApp {
     #[serde(rename = "appUrl")]
     pub app_url: String,
@@ -3474,7 +3484,7 @@ pub struct WebApp {
     pub use_managed_browser: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidStoreApp {
     #[serde(rename = "packageId")]
     pub package_id: String,
@@ -3484,7 +3494,7 @@ pub struct AndroidStoreApp {
     pub minimum_supported_operating_system: AndroidMinimumOperatingSystem,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosVppApp {
     #[serde(rename = "usedLicenseCount")]
     pub used_license_count: i32,
@@ -3508,7 +3518,7 @@ pub struct IosVppApp {
     pub bundle_id: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosStoreApp {
     #[serde(rename = "bundleId")]
     pub bundle_id: String,
@@ -3520,7 +3530,7 @@ pub struct IosStoreApp {
     pub minimum_supported_operating_system: IosMinimumOperatingSystem,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosMobileAppConfiguration {
     #[serde(rename = "encodedSettingXml")]
     pub encoded_setting_xml: Vec<u8>,
@@ -3528,7 +3538,7 @@ pub struct IosMobileAppConfiguration {
     pub settings: Vec<AppConfigurationSettingItem>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceManagement {
     #[serde(rename = "subscriptionState")]
     pub subscription_state: DeviceManagementSubscriptionState,
@@ -3595,7 +3605,7 @@ pub struct DeviceManagement {
     pub troubleshooting_events: Vec<DeviceManagementTroubleshootingEvent>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TermsAndConditions {
     #[serde(rename = "createdDateTime")]
     pub created_date_time: String,
@@ -3619,7 +3629,7 @@ pub struct TermsAndConditions {
     pub acceptance_statuses: Vec<TermsAndConditionsAcceptanceStatus>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ApplePushNotificationCertificate {
     #[serde(rename = "appleIdentifier")]
     pub apple_identifier: String,
@@ -3633,7 +3643,7 @@ pub struct ApplePushNotificationCertificate {
     pub certificate: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedDeviceOverview {
     #[serde(rename = "enrolledDeviceCount")]
     pub enrolled_device_count: i32,
@@ -3647,7 +3657,7 @@ pub struct ManagedDeviceOverview {
     pub device_exchange_access_state_summary: DeviceExchangeAccessStateSummary,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DetectedApp {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3661,7 +3671,7 @@ pub struct DetectedApp {
     pub managed_devices: Vec<ManagedDevice>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfiguration {
     #[serde(rename = "lastModifiedDateTime")]
     pub last_modified_date_time: String,
@@ -3687,7 +3697,7 @@ pub struct DeviceConfiguration {
     pub device_setting_state_summaries: Vec<SettingStateDeviceSummary>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceCompliancePolicy {
     #[serde(rename = "createdDateTime")]
     pub created_date_time: String,
@@ -3715,7 +3725,7 @@ pub struct DeviceCompliancePolicy {
     pub assignments: Vec<DeviceCompliancePolicyAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SoftwareUpdateStatusSummary {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3749,7 +3759,7 @@ pub struct SoftwareUpdateStatusSummary {
     pub not_applicable_user_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceCompliancePolicyDeviceStateSummary {
     #[serde(rename = "inGracePeriodCount")]
     pub in_grace_period_count: i32,
@@ -3771,7 +3781,7 @@ pub struct DeviceCompliancePolicyDeviceStateSummary {
     pub conflict_device_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceCompliancePolicySettingStateSummary {
     #[serde(rename = "setting")]
     pub setting: String,
@@ -3797,7 +3807,7 @@ pub struct DeviceCompliancePolicySettingStateSummary {
     pub device_compliance_setting_states: Vec<DeviceComplianceSettingState>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationDeviceStateSummary {
     #[serde(rename = "unknownDeviceCount")]
     pub unknown_device_count: i32,
@@ -3815,7 +3825,7 @@ pub struct DeviceConfigurationDeviceStateSummary {
     pub conflict_device_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosUpdateDeviceStatus {
     #[serde(rename = "installStatus")]
     pub install_status: IosUpdatesInstallStatus,
@@ -3841,7 +3851,7 @@ pub struct IosUpdateDeviceStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceCategory {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3849,7 +3859,7 @@ pub struct DeviceCategory {
     pub description: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceManagementExchangeConnector {
     #[serde(rename = "lastSyncDateTime")]
     pub last_sync_date_time: String,
@@ -3871,7 +3881,7 @@ pub struct DeviceManagementExchangeConnector {
     pub exchange_organization: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceEnrollmentConfiguration {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3889,7 +3899,7 @@ pub struct DeviceEnrollmentConfiguration {
     pub assignments: Vec<EnrollmentConfigurationAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct OnPremisesConditionalAccessSettings {
     #[serde(rename = "enabled")]
     pub enabled: bool,
@@ -3901,7 +3911,7 @@ pub struct OnPremisesConditionalAccessSettings {
     pub override_default_rule: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MobileThreatDefenseConnector {
     #[serde(rename = "lastHeartbeatDateTime")]
     pub last_heartbeat_date_time: String,
@@ -3921,7 +3931,7 @@ pub struct MobileThreatDefenseConnector {
     pub partner_unresponsiveness_threshold_in_days: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceManagementPartner {
     #[serde(rename = "lastHeartbeatDateTime")]
     pub last_heartbeat_date_time: String,
@@ -3941,7 +3951,7 @@ pub struct DeviceManagementPartner {
     pub when_partner_devices_will_be_marked_as_non_compliant_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct NotificationMessageTemplate {
     #[serde(rename = "lastModifiedDateTime")]
     pub last_modified_date_time: String,
@@ -3955,7 +3965,7 @@ pub struct NotificationMessageTemplate {
     pub localized_notification_messages: Vec<LocalizedNotificationMessage>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RoleDefinition {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3969,7 +3979,7 @@ pub struct RoleDefinition {
     pub role_assignments: Vec<RoleAssignment>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RoleAssignment {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -3981,13 +3991,13 @@ pub struct RoleAssignment {
     pub role_definition: RoleDefinition,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceAndAppManagementRoleAssignment {
     #[serde(rename = "members")]
     pub members: Vec<String>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ResourceOperation {
     #[serde(rename = "resourceName")]
     pub resource_name: String,
@@ -3997,7 +4007,7 @@ pub struct ResourceOperation {
     pub description: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TelecomExpenseManagementPartner {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -4011,7 +4021,7 @@ pub struct TelecomExpenseManagementPartner {
     pub last_connection_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RemoteAssistancePartner {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -4023,7 +4033,7 @@ pub struct RemoteAssistancePartner {
     pub last_connection_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsInformationProtectionAppLearningSummary {
     #[serde(rename = "applicationName")]
     pub application_name: String,
@@ -4033,7 +4043,7 @@ pub struct WindowsInformationProtectionAppLearningSummary {
     pub device_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsInformationProtectionNetworkLearningSummary {
     #[serde(rename = "url")]
     pub url: String,
@@ -4041,13 +4051,13 @@ pub struct WindowsInformationProtectionNetworkLearningSummary {
     pub device_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TermsAndConditionsAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TermsAndConditionsAcceptanceStatus {
     #[serde(rename = "userDisplayName")]
     pub user_display_name: String,
@@ -4059,7 +4069,7 @@ pub struct TermsAndConditionsAcceptanceStatus {
     pub terms_and_conditions: TermsAndConditions,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationState {
     #[serde(rename = "settingStates")]
     pub setting_states: Vec<DeviceConfigurationSettingState>,
@@ -4075,7 +4085,7 @@ pub struct DeviceConfigurationState {
     pub setting_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceCompliancePolicyState {
     #[serde(rename = "settingStates")]
     pub setting_states: Vec<DeviceCompliancePolicySettingState>,
@@ -4091,13 +4101,13 @@ pub struct DeviceCompliancePolicyState {
     pub setting_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationDeviceStatus {
     #[serde(rename = "deviceDisplayName")]
     pub device_display_name: String,
@@ -4115,7 +4125,7 @@ pub struct DeviceConfigurationDeviceStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationUserStatus {
     #[serde(rename = "userDisplayName")]
     pub user_display_name: String,
@@ -4129,7 +4139,7 @@ pub struct DeviceConfigurationUserStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationDeviceOverview {
     #[serde(rename = "pendingCount")]
     pub pending_count: i32,
@@ -4147,7 +4157,7 @@ pub struct DeviceConfigurationDeviceOverview {
     pub configuration_version: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceConfigurationUserOverview {
     #[serde(rename = "pendingCount")]
     pub pending_count: i32,
@@ -4165,7 +4175,7 @@ pub struct DeviceConfigurationUserOverview {
     pub configuration_version: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SettingStateDeviceSummary {
     #[serde(rename = "settingName")]
     pub setting_name: String,
@@ -4187,13 +4197,13 @@ pub struct SettingStateDeviceSummary {
     pub conflict_device_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceCompliancePolicyAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceScheduledActionForRule {
     #[serde(rename = "ruleName")]
     pub rule_name: String,
@@ -4201,7 +4211,7 @@ pub struct DeviceComplianceScheduledActionForRule {
     pub scheduled_action_configurations: Vec<DeviceComplianceActionItem>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceDeviceStatus {
     #[serde(rename = "deviceDisplayName")]
     pub device_display_name: String,
@@ -4219,7 +4229,7 @@ pub struct DeviceComplianceDeviceStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceUserStatus {
     #[serde(rename = "userDisplayName")]
     pub user_display_name: String,
@@ -4233,7 +4243,7 @@ pub struct DeviceComplianceUserStatus {
     pub user_principal_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceDeviceOverview {
     #[serde(rename = "pendingCount")]
     pub pending_count: i32,
@@ -4251,7 +4261,7 @@ pub struct DeviceComplianceDeviceOverview {
     pub configuration_version: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceUserOverview {
     #[serde(rename = "pendingCount")]
     pub pending_count: i32,
@@ -4269,7 +4279,7 @@ pub struct DeviceComplianceUserOverview {
     pub configuration_version: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceActionItem {
     #[serde(rename = "gracePeriodHours")]
     pub grace_period_hours: i32,
@@ -4281,13 +4291,13 @@ pub struct DeviceComplianceActionItem {
     pub notification_message_c_c_list: Vec<String>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidCustomConfiguration {
     #[serde(rename = "omaSettings")]
     pub oma_settings: Vec<OmaSetting>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidGeneralDeviceConfiguration {
     #[serde(rename = "appsBlockClipboardSharing")]
     pub apps_block_clipboard_sharing: bool,
@@ -4387,13 +4397,13 @@ pub struct AndroidGeneralDeviceConfiguration {
     pub security_require_verify_apps: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidWorkProfileCustomConfiguration {
     #[serde(rename = "omaSettings")]
     pub oma_settings: Vec<OmaSetting>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidWorkProfileGeneralDeviceConfiguration {
     #[serde(rename = "passwordBlockFingerprintUnlock")]
     pub password_block_fingerprint_unlock: bool,
@@ -4466,10 +4476,10 @@ pub struct AndroidWorkProfileGeneralDeviceConfiguration {
     pub security_require_verify_apps: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosCertificateProfile {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosCustomConfiguration {
     #[serde(rename = "payloadName")]
     pub payload_name: String,
@@ -4479,7 +4489,7 @@ pub struct IosCustomConfiguration {
     pub payload: Vec<u8>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosGeneralDeviceConfiguration {
     #[serde(rename = "accountBlockModification")]
     pub account_block_modification: bool,
@@ -4745,7 +4755,7 @@ pub struct IosGeneralDeviceConfiguration {
     pub wi_fi_connect_only_to_configured_networks: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosUpdateConfiguration {
     #[serde(rename = "activeHoursStart")]
     pub active_hours_start: String,
@@ -4757,7 +4767,7 @@ pub struct IosUpdateConfiguration {
     pub utc_time_offset_in_minutes: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MacOSCustomConfiguration {
     #[serde(rename = "payloadName")]
     pub payload_name: String,
@@ -4767,7 +4777,7 @@ pub struct MacOSCustomConfiguration {
     pub payload: Vec<u8>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MacOSGeneralDeviceConfiguration {
     #[serde(rename = "compliantAppsList")]
     pub compliant_apps_list: Vec<AppListItem>,
@@ -4795,10 +4805,10 @@ pub struct MacOSGeneralDeviceConfiguration {
     pub password_required: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AppleDeviceFeaturesConfigurationBase {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosDeviceFeaturesConfiguration {
     #[serde(rename = "assetTagTemplate")]
     pub asset_tag_template: String,
@@ -4812,10 +4822,10 @@ pub struct IosDeviceFeaturesConfiguration {
     pub notification_settings: Vec<IosNotificationSettings>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MacOSDeviceFeaturesConfiguration {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10EndpointProtectionConfiguration {
     #[serde(rename = "firewallBlockStatefulFTP")]
     pub firewall_block_stateful_f_t_p: bool,
@@ -4892,7 +4902,7 @@ pub struct Windows10EndpointProtectionConfiguration {
     pub bit_locker_removable_drive_policy: BitLockerRemovableDrivePolicy,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10GeneralConfiguration {
     #[serde(rename = "enterpriseCloudPrintDiscoveryEndPoint")]
     pub enterprise_cloud_print_discovery_end_point: String,
@@ -5298,7 +5308,7 @@ pub struct Windows10GeneralConfiguration {
     pub tenant_lockdown_require_network_during_out_of_box_experience: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsDefenderAdvancedThreatProtectionConfiguration {
     #[serde(rename = "allowSampleSharing")]
     pub allow_sample_sharing: bool,
@@ -5306,7 +5316,7 @@ pub struct WindowsDefenderAdvancedThreatProtectionConfiguration {
     pub enable_expedited_telemetry_reporting: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EditionUpgradeConfiguration {
     #[serde(rename = "licenseType")]
     pub license_type: EditionUpgradeLicenseType,
@@ -5318,19 +5328,19 @@ pub struct EditionUpgradeConfiguration {
     pub product_key: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10CustomConfiguration {
     #[serde(rename = "omaSettings")]
     pub oma_settings: Vec<OmaSetting>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10EnterpriseModernAppManagementConfiguration {
     #[serde(rename = "uninstallBuiltInApps")]
     pub uninstall_built_in_apps: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SharedPCConfiguration {
     #[serde(rename = "accountManagerPolicy")]
     pub account_manager_policy: SharedPCAccountManagerPolicy,
@@ -5358,7 +5368,7 @@ pub struct SharedPCConfiguration {
     pub maintenance_start_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10SecureAssessmentConfiguration {
     #[serde(rename = "launchUri")]
     pub launch_uri: String,
@@ -5372,13 +5382,13 @@ pub struct Windows10SecureAssessmentConfiguration {
     pub allow_text_suggestion: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsPhone81CustomConfiguration {
     #[serde(rename = "omaSettings")]
     pub oma_settings: Vec<OmaSetting>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsUpdateForBusinessConfiguration {
     #[serde(rename = "deliveryOptimizationMode")]
     pub delivery_optimization_mode: WindowsDeliveryOptimizationMode,
@@ -5408,7 +5418,7 @@ pub struct WindowsUpdateForBusinessConfiguration {
     pub business_ready_updates_only: WindowsUpdateType,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows81GeneralConfiguration {
     #[serde(rename = "accountsBlockAddingNonMicrosoftAccountEmail")]
     pub accounts_block_adding_non_microsoft_account_email: bool,
@@ -5478,7 +5488,7 @@ pub struct Windows81GeneralConfiguration {
     pub work_folders_url: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsPhone81GeneralConfiguration {
     #[serde(rename = "applyOnlyToWindowsPhone81")]
     pub apply_only_to_windows_phone81: bool,
@@ -5540,7 +5550,7 @@ pub struct WindowsPhone81GeneralConfiguration {
     pub windows_store_blocked: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10TeamGeneralConfiguration {
     #[serde(rename = "azureOperationalInsightsBlockTelemetry")]
     pub azure_operational_insights_block_telemetry: bool,
@@ -5584,7 +5594,7 @@ pub struct Windows10TeamGeneralConfiguration {
     pub welcome_screen_meeting_information: WelcomeScreenMeetingInformation,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidCompliancePolicy {
     #[serde(rename = "passwordRequired")]
     pub password_required: bool,
@@ -5630,7 +5640,7 @@ pub struct AndroidCompliancePolicy {
     pub security_require_company_portal_app_integrity: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidWorkProfileCompliancePolicy {
     #[serde(rename = "passwordRequired")]
     pub password_required: bool,
@@ -5676,7 +5686,7 @@ pub struct AndroidWorkProfileCompliancePolicy {
     pub security_require_company_portal_app_integrity: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosCompliancePolicy {
     #[serde(rename = "passcodeBlockSimple")]
     pub passcode_block_simple: bool,
@@ -5708,7 +5718,7 @@ pub struct IosCompliancePolicy {
     pub managed_email_profile_required: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct MacOSCompliancePolicy {
     #[serde(rename = "passwordRequired")]
     pub password_required: bool,
@@ -5746,7 +5756,7 @@ pub struct MacOSCompliancePolicy {
     pub firewall_enable_stealth_mode: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10CompliancePolicy {
     #[serde(rename = "passwordRequired")]
     pub password_required: bool,
@@ -5788,7 +5798,7 @@ pub struct Windows10CompliancePolicy {
     pub storage_require_encryption: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows10MobileCompliancePolicy {
     #[serde(rename = "passwordRequired")]
     pub password_required: bool,
@@ -5824,7 +5834,7 @@ pub struct Windows10MobileCompliancePolicy {
     pub storage_require_encryption: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Windows81CompliancePolicy {
     #[serde(rename = "passwordRequired")]
     pub password_required: bool,
@@ -5850,7 +5860,7 @@ pub struct Windows81CompliancePolicy {
     pub storage_require_encryption: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsPhone81CompliancePolicy {
     #[serde(rename = "passwordBlockSimple")]
     pub password_block_simple: bool,
@@ -5876,7 +5886,7 @@ pub struct WindowsPhone81CompliancePolicy {
     pub storage_require_encryption: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceComplianceSettingState {
     #[serde(rename = "setting")]
     pub setting: String,
@@ -5902,19 +5912,19 @@ pub struct DeviceComplianceSettingState {
     pub compliance_grace_period_expiration_date_time: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EnrollmentConfigurationAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceEnrollmentLimitConfiguration {
     #[serde(rename = "limit")]
     pub limit: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceEnrollmentPlatformRestrictionsConfiguration {
     #[serde(rename = "iosRestriction")]
     pub ios_restriction: DeviceEnrollmentPlatformRestriction,
@@ -5928,7 +5938,7 @@ pub struct DeviceEnrollmentPlatformRestrictionsConfiguration {
     pub mac_o_s_restriction: DeviceEnrollmentPlatformRestriction,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceEnrollmentWindowsHelloForBusinessConfiguration {
     #[serde(rename = "pinMinimumLength")]
     pub pin_minimum_length: i32,
@@ -5956,7 +5966,7 @@ pub struct DeviceEnrollmentWindowsHelloForBusinessConfiguration {
     pub enhanced_biometrics_state: Enablement,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedMobileApp {
     #[serde(rename = "mobileAppIdentifier")]
     pub mobile_app_identifier: MobileAppIdentifier,
@@ -5964,13 +5974,13 @@ pub struct ManagedMobileApp {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TargetedManagedAppPolicyAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppOperation {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -5982,7 +5992,7 @@ pub struct ManagedAppOperation {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppPolicyDeploymentSummary {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -5996,7 +6006,7 @@ pub struct ManagedAppPolicyDeploymentSummary {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct WindowsInformationProtectionAppLockerFile {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -6008,19 +6018,19 @@ pub struct WindowsInformationProtectionAppLockerFile {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosManagedAppRegistration {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AndroidManagedAppRegistration {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedAppStatusRaw {
     #[serde(rename = "content")]
     pub content: Json,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct LocalizedNotificationMessage {
     #[serde(rename = "lastModifiedDateTime")]
     pub last_modified_date_time: String,
@@ -6034,10 +6044,10 @@ pub struct LocalizedNotificationMessage {
     pub is_default: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceAndAppManagementRoleDefinition {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ManagedEBookAssignment {
     #[serde(rename = "target")]
     pub target: DeviceAndAppManagementAssignmentTarget,
@@ -6045,7 +6055,7 @@ pub struct ManagedEBookAssignment {
     pub install_intent: InstallIntent,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EBookInstallSummary {
     #[serde(rename = "installedDeviceCount")]
     pub installed_device_count: i32,
@@ -6061,7 +6071,7 @@ pub struct EBookInstallSummary {
     pub not_installed_user_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DeviceInstallState {
     #[serde(rename = "deviceName")]
     pub device_name: String,
@@ -6081,7 +6091,7 @@ pub struct DeviceInstallState {
     pub user_name: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct UserInstallStateSummary {
     #[serde(rename = "userName")]
     pub user_name: String,
@@ -6095,10 +6105,10 @@ pub struct UserInstallStateSummary {
     pub device_states: Vec<DeviceInstallState>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosVppEBookAssignment {}
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IosVppEBook {
     #[serde(rename = "vppTokenId")]
     pub vpp_token_id: String,
@@ -6118,7 +6128,7 @@ pub struct IosVppEBook {
     pub used_license_count: i32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct EnrollmentTroubleshootingEvent {
     #[serde(rename = "managedDeviceIdentifier")]
     pub managed_device_identifier: String,
@@ -6138,7 +6148,7 @@ pub struct EnrollmentTroubleshootingEvent {
     pub failure_reason: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct ActivityHistoryItem {
     #[serde(rename = "status")]
     pub status: Status,
@@ -6160,7 +6170,7 @@ pub struct ActivityHistoryItem {
     pub activity: UserActivity,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Security {
     #[serde(rename = "alerts")]
     pub alerts: Vec<Alert>,
@@ -6170,7 +6180,7 @@ pub struct Security {
     pub secure_scores: Vec<SecureScore>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Alert {
     #[serde(rename = "activityGroupName")]
     pub activity_group_name: String,
@@ -6238,7 +6248,7 @@ pub struct Alert {
     pub vulnerability_states: Vec<VulnerabilityState>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SecureScoreControlProfile {
     #[serde(rename = "actionType")]
     pub action_type: String,
@@ -6280,7 +6290,7 @@ pub struct SecureScoreControlProfile {
     pub vendor_information: SecurityVendorInformation,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SecureScore {
     #[serde(rename = "activeUserCount")]
     pub active_user_count: i32,
@@ -6304,7 +6314,7 @@ pub struct SecureScore {
     pub vendor_information: SecurityVendorInformation,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Trending {
     #[serde(rename = "weight")]
     pub weight: i64,
@@ -6318,7 +6328,7 @@ pub struct Trending {
     pub resource: Entity,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SharedInsight {
     #[serde(rename = "lastShared")]
     pub last_shared: SharingDetail,
@@ -6334,7 +6344,7 @@ pub struct SharedInsight {
     pub resource: Entity,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct UsedInsight {
     #[serde(rename = "lastUsed")]
     pub last_used: UsageDetails,
@@ -6346,13 +6356,13 @@ pub struct UsedInsight {
     pub resource: Entity,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AppCatalogs {
     #[serde(rename = "teamsApps")]
     pub teams_apps: Vec<TeamsApp>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TeamsApp {
     #[serde(rename = "externalId")]
     pub external_id: String,
@@ -6364,7 +6374,7 @@ pub struct TeamsApp {
     pub app_definitions: Vec<TeamsAppDefinition>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Channel {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -6378,7 +6388,7 @@ pub struct Channel {
     pub tabs: Vec<TeamsTab>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TeamsAppInstallation {
     #[serde(rename = "teamsApp")]
     pub teams_app: TeamsApp,
@@ -6386,7 +6396,7 @@ pub struct TeamsAppInstallation {
     pub teams_app_definition: TeamsAppDefinition,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TeamsAsyncOperation {
     #[serde(rename = "operationType")]
     pub operation_type: TeamsAsyncOperationType,
@@ -6406,7 +6416,7 @@ pub struct TeamsAsyncOperation {
     pub error: OperationError,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TeamsAppDefinition {
     #[serde(rename = "teamsAppId")]
     pub teams_app_id: String,
@@ -6416,7 +6426,7 @@ pub struct TeamsAppDefinition {
     pub version: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct TeamsTab {
     #[serde(rename = "displayName")]
     pub display_name: String,
@@ -6428,7 +6438,7 @@ pub struct TeamsTab {
     pub teams_app: TeamsApp,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DataPolicyOperation {
     #[serde(rename = "completedDateTime")]
     pub completed_date_time: String,
@@ -6444,7 +6454,7 @@ pub struct DataPolicyOperation {
     pub progress: i64,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct IdentityProvider {
     #[serde(rename = "type")]
     pub _type: String,
@@ -6456,7 +6466,7 @@ pub struct IdentityProvider {
     pub client_secret: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DirectoryAudit {
     #[serde(rename = "category")]
     pub category: String,
@@ -6482,7 +6492,7 @@ pub struct DirectoryAudit {
     pub additional_details: Vec<KeyValue>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SignIn {
     #[serde(rename = "createdDateTime")]
     pub created_date_time: String,
@@ -6530,13 +6540,13 @@ pub struct SignIn {
     pub resource_id: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RestrictedSignIn {
     #[serde(rename = "targetTenantId")]
     pub target_tenant_id: String,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct AuditLogRoot {
     #[serde(rename = "signIns")]
     pub sign_ins: Vec<SignIn>,
