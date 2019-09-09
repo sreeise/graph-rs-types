@@ -14,3 +14,9 @@ keywords = ["graph", "API"]
 [dependencies]
 serde = "1.0.88"
 serde_derive = "1.0.88"
+
+[features]
+option = []
+
+[badges]
+travis-ci = { repository = "https://github.com/sreeise/graph-rs-types", branch = "master" }
