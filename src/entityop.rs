@@ -2425,7 +2425,7 @@ pub struct DriveItem {
     pub workbook: Option<Workbook>,
     #[serde(rename = "@microsoft.graph.conflictBehavior")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    conflict_behavior: Option<String>,
+    pub conflict_behavior: Option<String>,
     #[serde(rename = "@microsoft.graph.downloadUrl")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub download_url: Option<String>,

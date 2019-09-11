@@ -1733,7 +1733,7 @@ pub struct DriveItem {
     #[serde(rename = "workbook")]
     pub workbook: Workbook,
     #[serde(rename = "@microsoft.graph.conflictBehavior")]
-    conflict_behavior: String,
+    pub conflict_behavior: String,
     #[serde(rename = "@microsoft.graph.downloadUrl")]
     pub download_url: String,
     #[serde(rename = "@microsoft.graph.sourceUrl")]
