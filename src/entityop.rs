@@ -1000,6 +1000,8 @@ pub struct Organization {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct User {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "accountEnabled")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub account_enabled: Option<bool>,

@@ -726,6 +726,7 @@ pub struct Organization {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct User {
+    pub id: String,
     #[serde(rename = "accountEnabled")]
     pub account_enabled: bool,
     #[serde(rename = "ageGroup")]
