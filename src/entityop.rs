@@ -2648,7 +2648,20 @@ pub struct Workbook {
 
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
-pub struct FieldValueSet(serde_json::Value);
+pub struct FieldValueSet(
+    #[serde(skip_serializing_if = "Option::is_none")] Option<serde_json::Value>
+);
+
+#[cfg(feature = "option")]
+impl FieldValueSet {
+    pub fn new(value: Option<serde_json::Value>) -> FieldValueSet {
+        FieldValueSet(value)
+    }
+
+    pub fn value(&self) -> Option<&serde_json::Value> {
+        self.0.as_ref()
+    }
+}
 
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
