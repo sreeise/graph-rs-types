@@ -369,8 +369,9 @@ pub struct ComplexExtensionValue(
 #[cfg(feature = "option")]
 impl ComplexExtensionValue {
     pub fn new(value: Option<serde_json::Value>) -> ComplexExtensionValue {
-        ComplexExtensionValue
+        ComplexExtensionValue(value)
     }
+
     pub fn value(&self) -> Option<&serde_json::Value> {
         self.0.as_ref()
     }
