@@ -1,6 +1,7 @@
 #[macro_use]
-extern crate serde_derive;
-extern crate serde;
+pub extern crate serde_derive;
+pub extern crate serde;
+pub extern crate serde_json;
 mod complex;
 mod complexop;
 mod entity;

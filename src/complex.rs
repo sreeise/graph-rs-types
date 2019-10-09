@@ -279,7 +279,17 @@ pub struct SettingTemplateValue {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ComplexExtensionValue {}
+pub struct ComplexExtensionValue(serde_json::Value);
+
+impl ComplexExtensionValue {
+    pub fn new(value: serde_json::Value) -> ComplexExtensionValue {
+        ComplexExtensionValue(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -898,7 +908,17 @@ pub struct PublicationFacet {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct BooleanColumn {}
+pub struct BooleanColumn(serde_json::Value);
+
+impl BooleanColumn {
+    pub fn new(value: serde_json::Value) -> BooleanColumn {
+        BooleanColumn(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1027,7 +1047,17 @@ pub struct Quota {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct SystemFacet {}
+pub struct SystemFacet(serde_json::Value);
+
+impl SystemFacet {
+    pub fn new(value: serde_json::Value) -> SystemFacet {
+        SystemFacet(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1235,7 +1265,16 @@ pub struct SpecialFolder {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Root {}
+pub struct Root(serde_json::Value);
+impl Root {
+    pub fn new(value: serde_json::Value) -> Root {
+        Root(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1271,7 +1310,17 @@ pub struct Video {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct AccessAction {}
+pub struct AccessAction(serde_json::Value);
+
+impl AccessAction {
+    pub fn new(value: serde_json::Value) -> AccessAction {
+        AccessAction(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1414,7 +1463,17 @@ pub struct WorkbookSessionInfo {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Json {}
+pub struct Json(serde_json::Value);
+
+impl Json {
+    pub fn new(value: serde_json::Value) -> Json {
+        Json(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1519,11 +1578,31 @@ pub struct InvitedUserMessageInfo {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PlannerAppliedCategories {}
+pub struct PlannerAppliedCategories(serde_json::Value);
+
+impl PlannerAppliedCategories {
+    pub fn new(value: serde_json::Value) -> PlannerAppliedCategories {
+        PlannerAppliedCategories(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PlannerAssignments {}
+pub struct PlannerAssignments(serde_json::Value);
+
+impl PlannerAssignments {
+    pub fn new(value: serde_json::Value) -> PlannerAssignments {
+        PlannerAssignments(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1568,19 +1647,59 @@ pub struct PlannerAssignment {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PlannerExternalReferences {}
+pub struct PlannerExternalReferences(serde_json::Value);
+
+impl PlannerExternalReferences {
+    pub fn new(value: serde_json::Value) -> PlannerExternalReferences {
+        PlannerExternalReferences(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PlannerChecklistItems {}
+pub struct PlannerChecklistItems(serde_json::Value);
+
+impl PlannerChecklistItems {
+    pub fn new(value: serde_json::Value) -> PlannerChecklistItems {
+        PlannerChecklistItems(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PlannerOrderHintsByAssignee {}
+pub struct PlannerOrderHintsByAssignee(serde_json::Value);
+
+impl PlannerOrderHintsByAssignee {
+    pub fn new(value: serde_json::Value) -> PlannerOrderHintsByAssignee {
+        PlannerOrderHintsByAssignee(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PlannerUserIds {}
+pub struct PlannerUserIds(serde_json::Value);
+
+impl PlannerUserIds {
+    pub fn new(value: serde_json::Value) -> PlannerUserIds {
+        PlannerUserIds(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1785,11 +1904,31 @@ pub struct EducationTerm {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct DeviceAndAppManagementAssignmentTarget {}
+pub struct DeviceAndAppManagementAssignmentTarget(serde_json::Value);
+
+impl DeviceAndAppManagementAssignmentTarget {
+    pub fn new(value: serde_json::Value) -> DeviceAndAppManagementAssignmentTarget {
+        DeviceAndAppManagementAssignmentTarget(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MobileAppAssignmentSettings {}
+pub struct MobileAppAssignmentSettings(serde_json::Value);
+
+impl MobileAppAssignmentSettings {
+    pub fn new(value: serde_json::Value) -> MobileAppAssignmentSettings {
+        MobileAppAssignmentSettings(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1821,7 +1960,17 @@ pub struct FileEncryptionInfo {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct AllLicensedUsersAssignmentTarget {}
+pub struct AllLicensedUsersAssignmentTarget(serde_json::Value);
+
+impl AllLicensedUsersAssignmentTarget {
+    pub fn new(value: serde_json::Value) -> AllLicensedUsersAssignmentTarget {
+        AllLicensedUsersAssignmentTarget(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1832,11 +1981,31 @@ pub struct GroupAssignmentTarget {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ExclusionGroupAssignmentTarget {}
+pub struct ExclusionGroupAssignmentTarget(serde_json::Value);
+
+impl ExclusionGroupAssignmentTarget {
+    pub fn new(value: serde_json::Value) -> ExclusionGroupAssignmentTarget {
+        ExclusionGroupAssignmentTarget(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct AllDevicesAssignmentTarget {}
+pub struct AllDevicesAssignmentTarget(serde_json::Value);
+
+impl AllDevicesAssignmentTarget {
+    pub fn new(value: serde_json::Value) -> AllDevicesAssignmentTarget {
+        AllDevicesAssignmentTarget(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2523,7 +2692,17 @@ pub struct Windows10NetworkProxyServer {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct EdgeSearchEngineBase {}
+pub struct EdgeSearchEngineBase(serde_json::Value);
+
+impl EdgeSearchEngineBase {
+    pub fn new(value: serde_json::Value) -> EdgeSearchEngineBase {
+        EdgeSearchEngineBase(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2554,7 +2733,17 @@ pub struct SharedPCAccountManagerPolicy {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct WindowsUpdateInstallScheduleType {}
+pub struct WindowsUpdateInstallScheduleType(serde_json::Value);
+
+impl WindowsUpdateInstallScheduleType {
+    pub fn new(value: serde_json::Value) -> WindowsUpdateInstallScheduleType {
+        WindowsUpdateInstallScheduleType(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2656,7 +2845,17 @@ pub struct DeviceEnrollmentPlatformRestriction {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MobileAppIdentifier {}
+pub struct MobileAppIdentifier(serde_json::Value);
+
+impl MobileAppIdentifier {
+    pub fn new(value: serde_json::Value) -> MobileAppIdentifier {
+        MobileAppIdentifier(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2744,7 +2943,17 @@ pub struct WindowsInformationProtectionIPRangeCollection {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct IpRange {}
+pub struct IpRange(serde_json::Value);
+
+impl IpRange {
+    pub fn new(value: serde_json::Value) -> IpRange {
+        IpRange(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2771,7 +2980,17 @@ pub struct ManagedAppPolicyDeploymentSummaryPerApp {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct WindowsInformationProtectionStoreApp {}
+pub struct WindowsInformationProtectionStoreApp(serde_json::Value);
+
+impl WindowsInformationProtectionStoreApp {
+    pub fn new(value: serde_json::Value) -> WindowsInformationProtectionStoreApp {
+        WindowsInformationProtectionStoreApp(value)
+    }
+
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]

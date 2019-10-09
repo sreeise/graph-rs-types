@@ -5,7 +5,17 @@ use crate::enumtypes::*;
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Entity {}
+pub struct Entity(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl Entity {
+    pub fn new(value: serde_json::Value) -> Entity {
+        Entity(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -16,7 +26,17 @@ pub struct DirectoryObject {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct AdministrativeUnit {}
+pub struct AdministrativeUnit(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl AdministrativeUnit {
+    pub fn new(value: serde_json::Value) -> AdministrativeUnit {
+        AdministrativeUnit(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -78,7 +98,17 @@ pub struct Device {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Extension {}
+pub struct Extension(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl Extension {
+    pub fn new(value: serde_json::Value) -> Extension {
+        Extension(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1509,7 +1539,17 @@ pub struct EventMessage {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ReferenceAttachment {}
+pub struct ReferenceAttachment(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl ReferenceAttachment {
+    pub fn new(value: serde_json::Value) -> ReferenceAttachment {
+        ReferenceAttachment(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -1867,7 +1907,17 @@ pub struct Workbook {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct FieldValueSet {}
+pub struct FieldValueSet(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl FieldValueSet {
+    pub fn new(value: serde_json::Value) -> FieldValueSet {
+        FieldValueSet(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2026,7 +2076,17 @@ pub struct WorkbookComment {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct WorkbookFunctions {}
+pub struct WorkbookFunctions(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl WorkbookFunctions {
+    pub fn new(value: serde_json::Value) -> WorkbookFunctions {
+        WorkbookFunctions(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2139,7 +2199,17 @@ pub struct WorkbookChartTitle {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct WorkbookChartFill {}
+pub struct WorkbookChartFill(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl WorkbookChartFill {
+    pub fn new(value: serde_json::Value) -> WorkbookChartFill {
+        WorkbookChartFill(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2394,7 +2464,17 @@ pub struct WorkbookRangeFormat {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct WorkbookRangeSort {}
+pub struct WorkbookRangeSort(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl WorkbookRangeSort {
+    pub fn new(value: serde_json::Value) -> WorkbookRangeSort {
+        WorkbookRangeSort(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -2812,7 +2892,17 @@ pub struct OnenoteOperation {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ReportRoot {}
+pub struct ReportRoot(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl ReportRoot {
+    pub fn new(value: serde_json::Value) -> ReportRoot {
+        ReportRoot(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -3335,7 +3425,17 @@ pub struct WindowsInformationProtection {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MdmWindowsInformationProtectionPolicy {}
+pub struct MdmWindowsInformationProtectionPolicy(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl MdmWindowsInformationProtectionPolicy {
+    pub fn new(value: serde_json::Value) -> MdmWindowsInformationProtectionPolicy {
+        MdmWindowsInformationProtectionPolicy(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -3521,7 +3621,17 @@ pub struct ManagedDeviceMobileAppConfigurationUserSummary {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MacOSOfficeSuiteApp {}
+pub struct MacOSOfficeSuiteApp(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl MacOSOfficeSuiteApp {
+    pub fn new(value: serde_json::Value) -> MacOSOfficeSuiteApp {
+        MacOSOfficeSuiteApp(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -4753,7 +4863,17 @@ pub struct AndroidWorkProfileGeneralDeviceConfiguration {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct IosCertificateProfile {}
+pub struct IosCertificateProfile(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl IosCertificateProfile {
+    pub fn new(value: serde_json::Value) -> IosCertificateProfile {
+        IosCertificateProfile(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -5088,7 +5208,17 @@ pub struct MacOSGeneralDeviceConfiguration {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct AppleDeviceFeaturesConfigurationBase {}
+pub struct AppleDeviceFeaturesConfigurationBase(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl AppleDeviceFeaturesConfigurationBase {
+    pub fn new(value: serde_json::Value) -> AppleDeviceFeaturesConfigurationBase {
+        AppleDeviceFeaturesConfigurationBase(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -5107,7 +5237,17 @@ pub struct IosDeviceFeaturesConfiguration {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MacOSDeviceFeaturesConfiguration {}
+pub struct MacOSDeviceFeaturesConfiguration(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl MacOSDeviceFeaturesConfiguration {
+    pub fn new(value: serde_json::Value) -> MacOSDeviceFeaturesConfiguration {
+        MacOSDeviceFeaturesConfiguration(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -6335,11 +6475,31 @@ pub struct WindowsInformationProtectionAppLockerFile {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct IosManagedAppRegistration {}
+pub struct IosManagedAppRegistration(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl IosManagedAppRegistration {
+    pub fn new(value: serde_json::Value) -> IosManagedAppRegistration {
+        IosManagedAppRegistration(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct AndroidManagedAppRegistration {}
+pub struct AndroidManagedAppRegistration(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl AndroidManagedAppRegistration {
+    pub fn new(value: serde_json::Value) -> AndroidManagedAppRegistration {
+        AndroidManagedAppRegistration(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -6365,7 +6525,17 @@ pub struct LocalizedNotificationMessage {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct DeviceAndAppManagementRoleDefinition {}
+pub struct DeviceAndAppManagementRoleDefinition(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl DeviceAndAppManagementRoleDefinition {
+    pub fn new(value: serde_json::Value) -> DeviceAndAppManagementRoleDefinition {
+        DeviceAndAppManagementRoleDefinition(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -6431,7 +6601,17 @@ pub struct UserInstallStateSummary {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct IosVppEBookAssignment {}
+pub struct IosVppEBookAssignment(serde_json::Value);
+
+#[cfg(not(feature = "option"))]
+impl IosVppEBookAssignment {
+    pub fn new(value: serde_json::Value) -> IosVppEBookAssignment {
+        IosVppEBookAssignment(value)
+    }
+    pub fn value(&self) -> &serde_json::Value {
+        &self.0
+    }
+}
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
