@@ -125,16 +125,9 @@ pub struct Device {
 
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
-pub struct Extension(#[serde(skip_serializing_if = "Option::is_none")] Option<serde_json::Value>);
-
-#[cfg(feature = "option")]
-impl Extension {
-    pub fn new(value: Option<serde_json::Value>) -> Extension {
-        Extension(value)
-    }
-    pub fn value(&self) -> Option<&serde_json::Value> {
-        self.0.as_ref()
-    }
+pub struct Extension {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>
 }
 
 #[cfg(feature = "option")]
@@ -525,6 +518,8 @@ pub struct ConversationThread {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Calendar {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "name")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -580,12 +575,25 @@ pub struct OutlookItem {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Event {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub categories: Option<Vec<String>>,
+    #[serde(rename = "changeKey")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub change_key: Option<String>,
+    #[serde(rename = "createdDateTime")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub created_date_time: Option<String>,
     #[serde(rename = "originalStartTimeZone")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub original_start_time_zone: Option<String>,
     #[serde(rename = "originalEndTimeZone")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub original_end_time_zone: Option<String>,
+    #[serde(rename = "lastModifiedDateTime")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub last_modified_date_time: Option<String>,
     #[serde(rename = "responseStatus")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub response_status: Option<ResponseStatus>,
@@ -1332,6 +1340,11 @@ pub struct OutlookUser {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Message {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+    #[serde(rename = "@odata.etag")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub odata_etag: Option<String>,
     #[serde(rename = "receivedDateTime")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub received_date_time: Option<String>,
@@ -1356,6 +1369,8 @@ pub struct Message {
     #[serde(rename = "bodyPreview")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub body_preview: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub categories: Option<Vec<String>>,
     #[serde(rename = "importance")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub importance: Option<Importance>,
@@ -1371,6 +1386,9 @@ pub struct Message {
     #[serde(rename = "toRecipients")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub to_recipients: Option<Vec<Recipient>>,
+    #[serde(rename = "changeKey")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub change_key: Option<String>,
     #[serde(rename = "ccRecipients")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub cc_recipients: Option<Vec<Recipient>>,
@@ -1392,6 +1410,8 @@ pub struct Message {
     #[serde(rename = "isReadReceiptRequested")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_read_receipt_requested: Option<bool>,
+    #[serde(rename = "lastModifiedDateTime")]
+    pub last_modified_date_time: Option<String>,
     #[serde(rename = "isRead")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_read: Option<bool>,
@@ -1424,6 +1444,8 @@ pub struct Message {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct MailFolder {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "displayName")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub display_name: Option<String>,
@@ -1459,6 +1481,8 @@ pub struct MailFolder {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct CalendarGroup {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "name")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -2016,6 +2040,8 @@ pub struct SchemaExtension {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Attachment {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "lastModifiedDateTime")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub last_modified_date_time: Option<String>,
@@ -2047,6 +2073,8 @@ pub struct OutlookCategory {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct MessageRule {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "displayName")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub display_name: Option<String>,
@@ -3780,6 +3808,26 @@ pub struct OnenoteEntityHierarchyModel {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Notebook {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+    #[serde(rename = "createdBy")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub created_by: Option<IdentitySet>,
+    #[serde(rename = "createdDateTime")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub created_date_time: Option<String>,
+    #[serde(rename = "lastModifiedBy")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub last_modified_by: Option<IdentitySet>,
+    #[serde(rename = "lastModifiedDateTime")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub last_modified_date_time: Option<String>,
+    #[serde(rename = "displayName")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
+    #[serde(rename = "self")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub _self: Option<String>,
     #[serde(rename = "isDefault")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_default: Option<bool>,
@@ -3809,6 +3857,8 @@ pub struct Notebook {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteSection {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "isDefault")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_default: Option<bool>,
@@ -3832,6 +3882,8 @@ pub struct OnenoteSection {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct SectionGroup {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "sectionsUrl")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub sections_url: Option<String>,
@@ -3855,6 +3907,8 @@ pub struct SectionGroup {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct OnenotePage {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "title")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
