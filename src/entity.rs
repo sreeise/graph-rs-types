@@ -98,7 +98,9 @@ pub struct Device {
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Extension(serde_json::Value);
+pub struct Extension {
+    pub id: String
+}
 
 #[cfg(not(feature = "option"))]
 impl Extension {
@@ -393,6 +395,7 @@ pub struct ConversationThread {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Calendar {
+    pub id: String,
     #[serde(rename = "name")]
     pub name: String,
     #[serde(rename = "color")]
@@ -433,10 +436,18 @@ pub struct OutlookItem {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Event {
+    pub id: String,
+    pub categories: Vec<String>,
+    #[serde(rename = "changeKey")]
+    pub change_key: String,
+    #[serde(rename = "createdDateTime")]
+    pub created_date_time: String,
     #[serde(rename = "originalStartTimeZone")]
     pub original_start_time_zone: String,
     #[serde(rename = "originalEndTimeZone")]
     pub original_end_time_zone: String,
+    #[serde(rename = "lastModifiedDateTime")]
+    pub last_modified_date_time: String,
     #[serde(rename = "responseStatus")]
     pub response_status: ResponseStatus,
     #[serde(rename = "iCalUId")]
@@ -959,6 +970,9 @@ pub struct OutlookUser {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Message {
+    pub id: String,
+    #[serde(rename = "@odata.etag")]
+    pub odata_etag: String,
     #[serde(rename = "receivedDateTime")]
     pub received_date_time: String,
     #[serde(rename = "sentDateTime")]
@@ -983,6 +997,8 @@ pub struct Message {
     pub sender: Recipient,
     #[serde(rename = "from")]
     pub from: Recipient,
+    #[serde(rename = "changeKey")]
+    pub change_key: String,
     #[serde(rename = "toRecipients")]
     pub to_recipients: Vec<Recipient>,
     #[serde(rename = "ccRecipients")]
@@ -999,6 +1015,8 @@ pub struct Message {
     pub is_delivery_receipt_requested: bool,
     #[serde(rename = "isReadReceiptRequested")]
     pub is_read_receipt_requested: bool,
+    #[serde(rename = "lastModifiedDateTime")]
+    pub last_modified_date_time: String,
     #[serde(rename = "isRead")]
     pub is_read: bool,
     #[serde(rename = "isDraft")]
@@ -1022,6 +1040,7 @@ pub struct Message {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct MailFolder {
+    pub id: String,
     #[serde(rename = "displayName")]
     pub display_name: String,
     #[serde(rename = "parentFolderId")]
@@ -1047,6 +1066,7 @@ pub struct MailFolder {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CalendarGroup {
+    pub id: String,
     #[serde(rename = "name")]
     pub name: String,
     #[serde(rename = "classId")]
@@ -1441,6 +1461,7 @@ pub struct SchemaExtension {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Attachment {
+    pub id: String,
     #[serde(rename = "lastModifiedDateTime")]
     pub last_modified_date_time: String,
     #[serde(rename = "name")]
@@ -2778,6 +2799,19 @@ pub struct OnenoteEntityHierarchyModel {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Notebook {
+    pub id: String,
+    #[serde(rename = "createdBy")]
+    pub created_by: IdentitySet,
+    #[serde(rename = "createdDateTime")]
+    pub created_date_time: String,
+    #[serde(rename = "lastModifiedBy")]
+    pub last_modified_by: IdentitySet,
+    #[serde(rename = "lastModifiedDateTime")]
+    pub last_modified_date_time: String,
+    #[serde(rename = "displayName")]
+    pub display_name: String,
+    #[serde(rename = "self")]
+    pub _self: String,
     #[serde(rename = "isDefault")]
     pub is_default: bool,
     #[serde(rename = "userRole")]
@@ -2799,6 +2833,7 @@ pub struct Notebook {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OnenoteSection {
+    pub id: String,
     #[serde(rename = "isDefault")]
     pub is_default: bool,
     #[serde(rename = "links")]
@@ -2816,6 +2851,7 @@ pub struct OnenoteSection {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SectionGroup {
+    pub id: String,
     #[serde(rename = "sectionsUrl")]
     pub sections_url: String,
     #[serde(rename = "sectionGroupsUrl")]
@@ -2833,6 +2869,7 @@ pub struct SectionGroup {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OnenotePage {
+    pub id: String,
     #[serde(rename = "title")]
     pub title: String,
     #[serde(rename = "createdByAppId")]
