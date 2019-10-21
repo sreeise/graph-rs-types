@@ -2542,6 +2542,9 @@ impl AllLicensedUsersAssignmentTarget {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct GroupAssignmentTarget {
+    #[serde(rename = "@odata.type")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub odata_type: Option<String>,
     #[serde(rename = "groupId")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub group_id: Option<String>,

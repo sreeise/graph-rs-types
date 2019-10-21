@@ -1991,6 +1991,8 @@ impl AllLicensedUsersAssignmentTarget {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GroupAssignmentTarget {
+    #[serde(rename = "@odata.type")]
+    pub odata_type: String,
     #[serde(rename = "groupId")]
     pub group_id: String,
 }

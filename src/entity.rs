@@ -246,6 +246,7 @@ pub struct LicenseDetails {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Group {
+    pub id: String,
     #[serde(rename = "assignedLicenses")]
     pub assigned_licenses: Vec<AssignedLicense>,
     #[serde(rename = "classification")]
@@ -351,6 +352,7 @@ pub struct Group {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GroupSetting {
+    pub id: String,
     #[serde(rename = "displayName")]
     pub display_name: String,
     #[serde(rename = "templateId")]
@@ -642,6 +644,7 @@ pub struct Onenote {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GroupLifecyclePolicy {
+    pub id: String,
     #[serde(rename = "groupLifetimeInDays")]
     pub group_lifetime_in_days: i32,
     #[serde(rename = "managedGroupTypes")]
@@ -1425,6 +1428,7 @@ pub struct UserSettings {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GroupSettingTemplate {
+    pub id: String,
     #[serde(rename = "displayName")]
     pub display_name: String,
     #[serde(rename = "description")]

@@ -317,6 +317,8 @@ pub struct LicenseDetails {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Group {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "assignedLicenses")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub assigned_licenses: Option<Vec<AssignedLicense>>,
@@ -472,6 +474,8 @@ pub struct Group {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct GroupSetting {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "displayName")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub display_name: Option<String>,
@@ -880,6 +884,8 @@ pub struct Onenote {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct GroupLifecyclePolicy {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "groupLifetimeInDays")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub group_lifetime_in_days: Option<i32>,
@@ -2006,6 +2012,8 @@ pub struct UserSettings {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct GroupSettingTemplate {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "displayName")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub display_name: Option<String>,
