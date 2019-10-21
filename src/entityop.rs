@@ -2,6 +2,8 @@
 use crate::complexop::*;
 #[cfg(feature = "option")]
 use crate::enumtypes::*;
+#[cfg(feature = "option")]
+use std::collections::HashMap;
 
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -127,7 +129,7 @@ pub struct Device {
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Extension {
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub id: Option<String>
+    pub id: Option<String>,
 }
 
 #[cfg(feature = "option")]
@@ -469,6 +471,9 @@ pub struct Group {
     #[serde(rename = "team")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub team: Option<Team>,
+    #[serde(rename = "members@delta")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub members_delta: Option<Vec<HashMap<String, String>>>,
 }
 
 #[cfg(feature = "option")]
@@ -2685,7 +2690,7 @@ pub struct Workbook {
 #[cfg(feature = "option")]
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct FieldValueSet(
-    #[serde(skip_serializing_if = "Option::is_none")] Option<serde_json::Value>
+    #[serde(skip_serializing_if = "Option::is_none")] Option<serde_json::Value>,
 );
 
 #[cfg(feature = "option")]

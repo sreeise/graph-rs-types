@@ -2,6 +2,8 @@
 use crate::complex::*;
 #[cfg(not(feature = "option"))]
 use crate::enumtypes::*;
+#[cfg(not(feature = "option"))]
+use std::collections::HashMap;
 
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
@@ -99,7 +101,7 @@ pub struct Device {
 #[cfg(not(feature = "option"))]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Extension {
-    pub id: String
+    pub id: String,
 }
 
 #[cfg(not(feature = "option"))]
@@ -347,6 +349,8 @@ pub struct Group {
     pub group_lifecycle_policies: Vec<GroupLifecyclePolicy>,
     #[serde(rename = "team")]
     pub team: Team,
+    #[serde(rename = "members@delta")]
+    pub members_delta: Vec<HashMap<String, String>>,
 }
 
 #[cfg(not(feature = "option"))]
