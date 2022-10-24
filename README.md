@@ -1,3 +1,5 @@
+THIS PROJECT HAS BEEN ARCHIVED AND IS NO LONGER UPDATED
+
 # graph-rs-types
 
 Microsoft Graph Types In Rust
